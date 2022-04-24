@@ -1,4 +1,4 @@
 ## Front-end-test - Growth
 
-#### Documents
+### Documents
 [Дизайн - Figma](https://www.figma.com/file/tIZEZn2HTAeSDQRzoOzvXE/Front-end-test%2C-Headway?node-id=1%3A535)
