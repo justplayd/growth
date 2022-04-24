@@ -1,0 +1,35 @@
+.finish {
+	min-height: 100vh;
+	background-color: #F5F5F7;
+
+	> .container,
+	> .container > .row {
+		height: 100%;
+	}
+
+	> .container > .row {
+		@include media("<lg") {
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+
+	.row {
+		[class*="col"]:nth-child(1),
+		[class*="col"]:nth-child(2) {
+			min-height: 50%;
+
+			@include media(">=lg") {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		[class*="col"]:nth-child(1) {
+			@include media("<lg") {
+				display: flex;
+				align-items: self-end;
+			}
+		}
+	}
+}
