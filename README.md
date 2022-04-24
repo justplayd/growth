@@ -12,7 +12,7 @@ Growth
    - sass
      - components - app style components
      - helpers - global styles
-     - mmodules
+     - modules
 - components - app components
 - layouts - app layouts
 - modules - app pages
