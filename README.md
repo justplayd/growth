@@ -6,6 +6,8 @@ Growth accelerattor
 - npm run dev ( node v14.19.1, npm v6.14.16 )
 
 ## Structure
+- config.json - App config
+- items.json - questions list
 - actions
 - assests
    - images
