@@ -3,7 +3,7 @@ Growth accelerattor
 
 ## Start Project
 - npm i
-- npm run dev ( node v14.19.1, npm v6.14.16 )
+- npm run dev ( node v14.19.1, npm v6.14.16)
 
 ## Structure
 - config.json - App config
