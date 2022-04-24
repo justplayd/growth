@@ -7,7 +7,8 @@
 # dependencies
 /node_modules
 
-# testing
+# Front
+#/build/*
 package-lock.json
 
 # misc
@@ -16,6 +17,3 @@ package-lock.json
 .env.development.local
 .env.test.local
 .env.production.local
-
-#
-/build/*
