@@ -9,6 +9,7 @@ Growth accelerattor
 - config.json - App config
 - items.json - questions list
 - actions
+- helpers - helper functions
 - assests
    - images
    - sass
