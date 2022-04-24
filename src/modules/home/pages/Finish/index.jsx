@@ -19,7 +19,8 @@ class FinishPage extends ModulePage {
 			introSubTitle,
 			keyItem,
 			keyItemInit,
-			items
+			items,
+			count
 		} = this.props;
 
 		return (
@@ -33,6 +34,7 @@ class FinishPage extends ModulePage {
 					keyItem={keyItem}
 					keyItemInit={keyItemInit}
 					items={items}
+					count={count}
 				/>
 			</Layout>
 		);
@@ -46,9 +48,11 @@ const mapStateToProps = ({
 	game: {
 		keyItem,
 		keyItemInit,
-		items
+		items,
+		count
 	}
 }) => ({
+	count,
 	keyItem,
 	keyItemInit,
 	items

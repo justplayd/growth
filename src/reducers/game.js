@@ -1,15 +1,19 @@
 import items from '../items.json';
+import config from '../config.json';
 
 const SET_NEXT_STATE = 'GAME/SET_NEXT_STATE';
 const ANSWER_FALSE = 'GAME/ANSWER_FALSE';
 const RESET_STATE = 'GAME/RESET_STATE';
 
+const filteItems = Object.keys(items).filter(Boolean);
+const firstElement = filteItems && filteItems.length && filteItems[(config?.countInit || 0)];
+
 const initialState = {
-	keyItemInit: items.init,
-	point: 2,
 	items,
-	value: { ...items[items.init] },
-	keyItem: items.init
+	keyItemInit: firstElement,
+	count: config.countInit,
+	value: { ...items[firstElement] },
+	keyItem: firstElement
 };
 
 // eslint-disable-next-line default-param-last
@@ -18,10 +22,11 @@ const rootReducer = (state = initialState, action) => {
 		case SET_NEXT_STATE:
 			return {
 				...state,
+				count: action.payload,
 				value: {
-					...items[action.payload * state.point]
+					...items[filteItems[action.payload]]
 				},
-				keyItem: action.payload * state.point
+				keyItem: (filteItems[action.payload] ?? filteItems[action.payload - 1])
 			};
 		case ANSWER_FALSE:
 			return {

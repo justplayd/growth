@@ -12,8 +12,14 @@ class PageNotFound extends ModulePage {
 	}
 	render() {
 		return (
-			<Layout>
-				<div>404</div>
+			<Layout
+				classBlock="not-found"
+			>
+				<div
+					className="not-found_content"
+				>
+					<img src="/src/assets/images/404.gif" className="not-found_img img-fluid" alt="not-found" loading="lazy" />
+				</div>
 			</Layout>
 		);
 	}
