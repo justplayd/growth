@@ -33,14 +33,14 @@ class GamePage extends ModulePage {
 	};
 	handleChangeSuccess = () => {
 		const {
-			actions,
-			keyItem
+			count,
+			actions
 		} = this.props;
 
 		this.setState({ loading: true });
 
 		setTimeout(() => {
-			actions.nextStep(keyItem);
+			actions.nextStep((count + 1));
 
 			this.setState({ loading: false });
 		}, 500);
@@ -127,6 +127,7 @@ GamePage.defaultProps = {};
 
 const mapStateToProps = ({
 	game: {
+		count,
 		value,
 		keyItem,
 		items
@@ -134,6 +135,7 @@ const mapStateToProps = ({
 }) => ({
 	...value,
 	keyItem,
+	count,
 	fullList: items
 });
 const mapDispatchToProps = (dispatch) => ({

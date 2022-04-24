@@ -1,14 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import chunkRight from '../../../../../helpers/chunkRight';
+
 function Sidebar(props) {
 	const {
 		items,
 		keyItem
 	} = props;
-	const filterItems = Object.keys(items)
-		.filter(Number)
-		.reverse();
+	const filterItems = Object.keys(items).reverse();
 
 	return (
 		<div className="sidebar">
@@ -19,14 +19,14 @@ function Sidebar(props) {
 							<div
 								key={i}
 								className={classNames('sidebar-i', {
-									disabled: Number(i) < keyItem && Number(i) !== keyItem,
-									'icons-selected': Number(i) === keyItem
+									disabled: Number(i) < Number(keyItem) && Number(i) !== Number(keyItem),
+									'icons-selected': Number(i) === Number(keyItem)
 								})}
 							>
 								<div className="sidebar-i_content">
 									<div className="sidebar-i_content-text">
 										{'$ '}
-										{i}
+										{chunkRight(i)}
 									</div>
 								</div>
 							</div>

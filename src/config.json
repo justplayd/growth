@@ -3,5 +3,6 @@
         "name": "Game",
         "environment": "development",
         "version": ""
-    }
+    },
+    "countInit": 0
 }

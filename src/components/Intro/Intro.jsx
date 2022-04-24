@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import chunkRight from '../../helpers/chunkRight';
+
 function Intro(props) {
 	const {
 		introTitle,
@@ -9,11 +11,19 @@ function Intro(props) {
 		introSubTitle,
 		keyItem,
 		keyItemInit,
-		linkToStart
+		linkToStart,
+		items,
+		count
 	} = props;
-	const total = (keyItem / 2 >= keyItemInit) ? String(keyItem / 2) : String(keyItemInit);
-	const totalWithPoint = total.length > 3 ? `${total.slice(0, 1)},${total.slice(1)}` : total;
-	const finalValue = keyItem === keyItemInit ? 0 : totalWithPoint;
+	/* Used in final page */
+	let finalValue = 0;
+
+	if (items && count && keyItem && keyItemInit) {
+		const keys = Object.keys(items);
+		const isLast = count && keys[count] ? keys[count - 1] : keys[keys.length - 1];
+		finalValue = keyItem === keyItemInit ? 0 : chunkRight(String(isLast));
+	}
+	/* End used in final page */
 
 	return (
 		<div className="container">
@@ -26,7 +36,7 @@ function Intro(props) {
 						{
 							introTotalText && introSubTitle ? (
 								<div className="intro-title-wrap">
-									{introSubTitle && <div className="intro-title-score">{introSubTitle}</div> }
+									{introSubTitle && <div className="intro-title-score">{introSubTitle}</div>}
 									{introTotalText && <div className="intro-title intro-title-2">{`$ ${finalValue} ${introTotalText}`}</div>}
 								</div>
 							) : null
