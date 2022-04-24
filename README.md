@@ -12,7 +12,7 @@ Growth accelerattor
    - sass
      - components - app style components
      - helpers - global styles
-     - modules
+     - modules - modules for project
 - components - app components
 - layouts - app layouts
 - modules - app pages
