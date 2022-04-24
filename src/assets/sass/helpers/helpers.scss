@@ -1,0 +1,66 @@
+html {
+	min-height: 100vh;
+	// scroll-behavior: smooth; // плавний скролл до якорів
+}
+
+body {
+	// height: 100%; // then => document.documentElement.scrollTop = 0;
+	min-height: 100vh;
+	overflow: auto;
+	overflow-x: hidden;
+	font-family: $font;
+	font-size: 18px;
+	line-height: normal;
+	font-weight: 400;
+	-webkit-overflow-scrolling: touch;
+
+	* {
+		word-break: keep-all;
+		word-wrap: break-word;
+		font-family: $font;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	*,
+	::before,
+	::after {
+		// animation-delay: -1ms !important;
+		// animation-duration: 1ms !important;
+		// animation-iteration-count: 1 !important;
+		// background-attachment: initial !important;
+		scroll-behavior: auto !important;
+		// transition-duration: 0s !important;
+		// transition-delay: 0s !important;
+	}
+}
+
+#root {
+	min-height: 100vh;
+}
+
+main {
+	min-height: 300px;
+}
+
+* {
+	&::selection {
+		color: $white;
+		background: $selection;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.img-fluid {
+	display: block;
+}
+
+b,
+strong {
+	font-weight: 700;
+	font-family: $font;
+}

@@ -1,0 +1,62 @@
+.btn {
+	// reset styles
+	border-radius: 0;
+	outline: none !important;
+	box-shadow: none !important;
+	cursor: pointer;
+	padding: 0;
+	text-decoration: none !important;
+	border: none;
+	user-select: none;
+	background-color: transparent;
+	// reset styles
+
+	&:hover,
+	&.hover {
+	}
+
+	&:active,
+	&.active {
+	}
+
+	&:focus,
+	&.focus {
+	}
+
+	&:disabled,
+	&.disabled {
+		//background: $black !important;
+		//color: $white !important;
+		//pointer-events: none !important;
+		//opacity: 0.2 !important;
+	}
+
+	&-orange {
+		width: 100%;
+		max-width: 300px;
+		min-height: 64px;
+		background: #FF8B37;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 1.2;
+		color: $white;
+		@include transition(.2s ease-in-out);
+
+		&:hover,
+		&.hover {
+			color: $white;
+			background-color: #FFAC70;
+		}
+
+		&:active,
+		&.active,
+		&:focus,
+		&.focus {
+			color: $white;
+			background: #E87928;
+		}
+	}
+}
