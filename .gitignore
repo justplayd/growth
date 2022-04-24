@@ -8,7 +8,7 @@
 /node_modules
 
 # Front
-#/build/*
+/build/*
 package-lock.json
 
 # misc
